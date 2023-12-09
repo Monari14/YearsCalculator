@@ -15,34 +15,33 @@ function calculateAge() {
   document.getElementById('monthLabel').classList.remove('error-label');
   document.getElementById('yearLabel').classList.remove('error-label');
 
-  if (birthDay > 31 || birthDay < 1) {
+  if (birthDay > 31 || birthDay < 1 || isNaN(birthDay)) {
     document.getElementById('dayLabel').classList.add('error-label');
     clearResults();
     return;
   }
 
-  if (birthMonth > 12 || birthMonth < 1) {
+  if (birthMonth > 12 || birthMonth < 1 || isNaN(birthMonth)) {
     document.getElementById('monthLabel').classList.add('error-label');
     clearResults();
     return;
   }
 
-  if (birthYear < 0 || birthYear > currentYear) {
+  if (birthYear < 0 || birthYear > currentYear || isNaN(birthYear)) {
     document.getElementById('yearLabel').classList.add('error-label');
     clearResults();
     return;
   }
 
-  displayResults(age, months, days);
-}
+  if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+    age--;
+    months = 12 + currentMonth - birthMonth - 1;
+    days = currentDay + (new Date(currentYear, currentMonth - 1, 0).getDate() - birthDay);
+  } else {
+    months = currentMonth - birthMonth;
+    days = currentDay - birthDay;
+  }
 
-function clearResults() {
-  document.getElementById('ageResultYears').innerHTML = '<span class="purpleText">--</span> <span class="blackText">years</span>';
-  document.getElementById('ageResultMonths').innerHTML = '<span class="purpleText">--</span> <span class="blackText">months</span>';
-  document.getElementById('ageResultDays').innerHTML = '<span class="purpleText">--</span> <span class="blackText">days</span>';
-}
-
-function displayResults(age, months, days) {
   if (isNaN(age)) {
     age = '--';
   }
@@ -67,6 +66,16 @@ function displayResults(age, months, days) {
     }
   }
 
+  displayResults(age, months, days);
+}
+
+function clearResults() {
+  document.getElementById('ageResultYears').innerHTML = '<span class="purpleText">--</span> <span class="blackText">years</span>';
+  document.getElementById('ageResultMonths').innerHTML = '<span class="purpleText">--</span> <span class="blackText">months</span>';
+  document.getElementById('ageResultDays').innerHTML = '<span class="purpleText">--</span> <span class="blackText">days</span>';
+}
+
+function displayResults(age, months, days) {
   document.getElementById('ageResultYears').innerHTML = `<span style="color: #864cff">${age}</span> <span style="color: black">years</span>`;
   document.getElementById('ageResultMonths').innerHTML = `<span style="color: #864cff">${months}</span> <span style="color: black">months</span>`;
   document.getElementById('ageResultDays').innerHTML = `<span style="color: #864cff">${days}</span> <span style="color: black">days</span>`;
