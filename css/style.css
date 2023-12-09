@@ -1,0 +1,118 @@
+body {
+    background-color: #353535;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  label,input {
+    margin-bottom: 10px;
+
+  }
+  
+  .day,.month,.year {
+    margin-right: 20px;
+  }
+  
+  label {
+    display: block;
+    color: #757575;
+    text-align: left;
+  }
+  input {
+    height: 100px;
+    width: 180px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30pt;
+    border-color: #dddddd;
+    font-family: 'MinhaFonte';
+    src: url('../fonts/Poppins-Bold.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('../fonts/Poppins-Bold.ttf') format('woff');
+  }
+
+  @font-face {
+    font-family: 'FontResult';
+    src: url('../fonts/Poppins-BoldItalic.ttf') format('woff');
+  }
+  
+  body {
+    font-family: 'MinhaFonte', Arial, sans-serif;
+  }
+
+  .function-calc {
+    text-align: left;
+  }
+  .container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 40px 40px 200px 40px;
+    bottom: 20px;
+    right: 20px;
+    height: 800px;
+  }
+
+  @font-face {
+    font-family: 'FontResult';
+    src: url('../fonts/Poppins-BoldItalic.ttf') format('woff');
+  }
+  
+  .result {
+    font-family: 'FontResult', Arial, sans-serif;
+    text-align: left;
+    font-size: 100px;
+    color: #864cff;
+  }
+  
+  .result {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .resultItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .purpleText {
+    color: #864cff;
+    margin-right: 10px;
+  }
+  
+  .blackText {
+    color: black;
+  }
+  
+  .error-label {
+    color: red;
+    font-weight: bold;
+  }

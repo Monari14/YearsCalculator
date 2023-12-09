@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator App</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="JavaScript/script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <form action="/submit" method="post">
+      <div class="day">
+        <label for="dia" id="dayLabel">DAY</label>  
+        <input type="number" id="dia" name="dia" min="1" max="31" placeholder="DD" required oninput="calculateAge()">
+        <div class="error-message-day error-label"></div>
+      </div>
+      <div class="month">
+        <label for="mes" id="monthLabel">MONTH</label>  
+        <input type="number" id="mes" name="mes" min="1" max="12" placeholder="MM" required oninput="calculateAge()">
+        <div class="error-message-month error-label"></div>
+      </div>
+      <div class="year">
+        <label for="ano" id="yearLabel">YEAR</label>
+        <input type="number" id="ano" name="ano" min="1900" max="2023" placeholder="YYYY" required oninput="calculateAge()">
+        <div class="error-message-year error-label"></div>
+      </div>
+    </form>
+
+    <div class="result">
+      <div class="resultItem">
+        <p id="ageResultYears"><span class="purpleText">--</span> <span class="blackText">years</span></p>
+      </div>
+      <div class="resultItem">
+        <p id="ageResultMonths"><span class="purpleText">--</span> <span class="blackText">months</span></p>
+      </div>
+      <div class="resultItem">
+        <p id="ageResultDays"><span class="purpleText">--</span> <span class="blackText">days</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="function-calc">
+  </div>
+</body>
+</html>
