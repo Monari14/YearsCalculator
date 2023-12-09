@@ -60,6 +60,11 @@ function displayResults(age, months, days) {
     const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
     days = prevMonth + days;
     months--;
+
+    if (months < 0) {
+      months = 11;
+      age--;
+    }
   }
 
   document.getElementById('ageResultYears').innerHTML = `<span style="color: #864cff">${age}</span> <span style="color: black">years</span>`;
